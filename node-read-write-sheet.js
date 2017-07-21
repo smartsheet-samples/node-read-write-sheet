@@ -9,7 +9,7 @@ var token = config.SMARTSHEET_ACCESS_TOKEN;
 if (!token)
     token = process.env.SMARTSHEET_ACCESS_TOKEN
 
-var sheetId = config.sheetId;
+var sheetId = config.SHEET_ID;
 
 // If not found, install SDK package with command line: npm install smartsheet
 var client = require('smartsheet');
@@ -97,3 +97,6 @@ ss.sheets.getSheet({ id: sheetId })
         }
         console.log("Done");
     })
+    .catch(function(error) {
+        console.log(error);
+    });
