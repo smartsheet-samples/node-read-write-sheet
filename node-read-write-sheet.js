@@ -1,7 +1,7 @@
 console.log('Starting');
 
 // TODO: Edit config.json to set desired sheet id and API token
-var config = require("./config.json");
+var config = require('./config.json');
 
 var token = config.SMARTSHEET_ACCESS_TOKEN;
 
@@ -53,10 +53,12 @@ function evaluateRowAndBuildUpdates(sourceRow) {
 }
 
 // Initialize client SDK
-var ss = client.createClient({ accessToken: token });
+// TODO: Configure log level with one of the following, or remove the option to turn off logging:
+//   'silly' | 'verbose' | 'debug' | 'info' | 'warn' | 'error'
+var smartsheet = client.createClient({ accessToken: token, logLevel: 'info' });
 
 // Load entire sheet
-ss.sheets.getSheet({ id: sheetId })
+smartsheet.sheets.getSheet({ id: sheetId })
     .then(function(sheet) {
         console.log("Loaded " + sheet.rows.length + " rows from sheet '" + sheet.name + "'");
 
@@ -86,7 +88,7 @@ ss.sheets.getSheet({ id: sheetId })
                 sheetId: sheet.id
             };
 
-            ss.sheets.updateRow(updateRowArgs)
+            smartsheet.sheets.updateRow(updateRowArgs)
                 .then(function(updatedRows) {
                     console.log("Updated succeded");
                 })
