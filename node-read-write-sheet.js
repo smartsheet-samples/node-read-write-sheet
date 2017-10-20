@@ -53,7 +53,7 @@ function evaluateRowAndBuildUpdates(sourceRow) {
 }
 
 // Initialize client SDK
-var ss = client.createClient({ accessToken: token });
+var ss = client.createClient({ accessToken: token, logLevel: 'info' });
 
 // Load entire sheet
 ss.sheets.getSheet({ id: sheetId })
