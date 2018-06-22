@@ -15,13 +15,11 @@ This is implemented in the `evaluate_row_and_build_updates()` method which you s
 
 ## Setup
 * Install the smartsheet library with `npm install smartsheet` at the command line
-* Import the sample data from "Sample Sheet.xlsx" into a new sheet
 
 * Update the `config.json` file with these two settings:
     * An API access token, obtained from the Smartsheet Account button, under Personal settings
-    * The Sheet Id, obtained from sheet properties 
 
-* Run the application using your preferred IDE or at the command line with `node node-read-write-sheet.js` 
+* Run the application using your preferred IDE or at the command line with `node node-read-write-sheet.js`
 
 The rows marked "Complete" will have the "Remaining" value set to 0. (Note that you will have to refresh in the desktop application to see the changes)
 
