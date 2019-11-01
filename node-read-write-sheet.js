@@ -2,6 +2,10 @@ console.log('Starting');
 
 // Use API token from environment variable "SMARTSHEET_ACCESS_TOKEN"
 var token = process.env.SMARTSHEET_ACCESS_TOKEN;
+if (!token) {
+    console.log("The environment SMARTSHEET_ACCESS_TOKEN is not set. Please set and rerun the program");
+    return;
+}
 
 // If not found, install SDK package with command line: npm install smartsheet
 var client = require('smartsheet');
