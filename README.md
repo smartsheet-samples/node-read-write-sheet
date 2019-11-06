@@ -16,8 +16,7 @@ This is implemented in the `evaluate_row_and_build_updates()` method which you s
 ## Setup
 * Install the smartsheet library with `npm install smartsheet` at the command line
 
-* Update the `config.json` file with these two settings:
-    * An API access token, obtained from the Smartsheet Account button, under Personal settings
+* Obtain your API access token obtained from the Smartsheet Account button, under Personal settings and set the SMARTSHEET_ACCESS_TOKEN environment variable with the token. 
 
 * Run the application using your preferred IDE or at the command line with `node node-read-write-sheet.js`
 
