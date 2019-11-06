@@ -1,12 +1,5 @@
 console.log('Starting');
 
-// Use API token from environment variable "SMARTSHEET_ACCESS_TOKEN"
-var token = process.env.SMARTSHEET_ACCESS_TOKEN;
-if (!token) {
-    console.log("The environment SMARTSHEET_ACCESS_TOKEN is not set. Please set and rerun the program");
-    return;
-}
-
 // If not found, install SDK package with command line: npm install smartsheet
 var client = require('smartsheet');
 
@@ -48,8 +41,8 @@ function evaluateRowAndBuildUpdates(sourceRow) {
     return rowToUpdate;
 }
 
-// Initialize client SDK
-var ss = client.createClient({ accessToken: token, logLevel: 'info' });
+// Initialize client SDK. Uses API token from environment variable "SMARTSHEET_ACCESS_TOKEN"
+var ss = client.createClient({ logLevel: 'info' });
 
 var options = {
     path: "Sample Sheet.xlsx",
